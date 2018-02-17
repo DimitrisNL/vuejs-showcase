@@ -4,7 +4,16 @@
 
 [link](https://nostalgic-goldberg-c2ac24.netlify.com/)
 
-## Build Setup
+### Dependencies
+
+* sanitize.css for some basic css normalization
+* font-awesome 4
+
+### Spacing
+
+I'm using 0.125, 0.25, 0.5, 1, 2, 4 (rem) thorought the project.
+
+### Build Setup
 
 ```bash
 # install dependencies
