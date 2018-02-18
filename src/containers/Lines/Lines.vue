@@ -53,17 +53,17 @@ export default {
 
 
 <template>
-  <div class='content p-4'>
-    <h1 class='content-title mb-4'>Commercial Property - Add Field</h1>
+  <div class='d-flex flex-column h-100 p-4'>
+    <h1 class='font-weight-normal mb-4'>Commercial Property - Add Field</h1>
 
-    <section class='bordered d-flex flex-grow mb-4'>
+    <section class='bordered d-flex mb-4 min-h-0 flex-grow'>
 
       <!-- Sidebar  -->
       <div class='sidebar rounded-left d-flex flex-column p-4'>
         <div>
           <h2 class='mb-3'>Field Types</h2>
 
-          <Field label='Filter Types' v-model='search' />
+          <Field label='Filter Types' v-model='search' :space='4' />
 
           <div v-for="fieldType in filteredList" :key='fieldType.id'>
             <Card :fieldType=fieldType />
@@ -75,27 +75,29 @@ export default {
       <!-- Main Content -->
       <div class='main rounded-right d-flex flex-column p-4'>
         <h2 class='mb-3'>Field Details</h2>
+
         <div class='flex-grow row'>
 
           <div class='col-8'>
+            <!-- Inputs Row-->
             <div class='row'>
               <div class='col-6 mb-4'>
                 <Field
                   v-model='fieldDetails.displayLabel'
                   label='Display Label'
                   subLabel='For display purposes, spaces allowed'
-                  :space='4'
+                  :space='5'
                   />
                 <Field
                   v-model='fieldDetails.defaultValue'
                   label='Default Value'
-                  :space='4' />
+                  :space='5' />
                 <Field
                   v-model='fieldDetails.customValidation'
                   label='Custom Validation'
                   subLabel='Any regex pattern can
                   be used for custom input validation'
-                  :space='4'
+                  :space='5'
                   />
               </div>
               <div class='col-6'>
@@ -104,10 +106,13 @@ export default {
                   label='Reference Name'
                   subLabel='Used to reference in calculations,
                   no space allowed'
-                  :space='4'
+                  :space='5'
                   />
               </div>
             </div>
+            <!-- End Inputs Row-->
+
+            <!-- Tags Row-->
             <div>
               <h3 class='mb-3'>Tags</h3>
               <div class='row'>
@@ -131,6 +136,7 @@ export default {
                 </div>
               </div>
             </div>
+             <!-- Tags Row-->
           </div>
 
           <div class='col-4 d-flex'>

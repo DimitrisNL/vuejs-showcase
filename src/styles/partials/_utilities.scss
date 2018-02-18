@@ -2,6 +2,11 @@
   flex-grow: 1;
 }
 
+// for sidebar scroll
+.min-h-0 {
+  min-height: 0%;
+}
+
 .bordered {
   border: 1px solid $granny_smith;
   border-radius: $border-radius;

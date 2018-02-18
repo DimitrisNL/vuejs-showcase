@@ -13,34 +13,34 @@ export const fieldTypes = [
     defaultDisplay: 'Datepicker, with configurable format',
     icon: 'calendar',
   },
-  // {
-  //   id: 4,
-  //   name: 'Lorem',
-  //   definition: 'Lorem ipsum dolor sit amet',
-  //   defaultDisplay: 'Etiam vehicula tincidunt nulla',
-  //   icon: 'car',
-  // },
-  // {
-  //   id: 5,
-  //   name: 'Ipsum',
-  //   definition: 'Lorem ipsum dolor sit amet',
-  //   defaultDisplay: 'Etiam vehicula tincidunt nulla',
-  //   icon: 'h',
-  // },
-  // {
-  //   id: 6,
-  //   name: 'Loren',
-  //   definition: 'Lorem ipsum dolor sit amet',
-  //   defaultDisplay: 'Etiam vehicula tincidunt nulla',
-  //   icon: 'date',
-  // },
-  // {
-  //   id: 7,
-  //   name: 'Ipsun',
-  //   definition: 'Lorem ipsum dolor sit amet',
-  //   defaultDisplay: 'Etiam vehicula tincidunt nulla',
-  //   icon: 'car',
-  // },
+  {
+    id: 4,
+    name: 'Lorem',
+    definition: 'Lorem ipsum dolor sit amet',
+    defaultDisplay: 'Etiam vehicula tincidunt nulla',
+    icon: 'car',
+  },
+  {
+    id: 5,
+    name: 'Ipsum',
+    definition: 'Lorem ipsum dolor sit amet',
+    defaultDisplay: 'Etiam vehicula tincidunt nulla',
+    icon: 'header',
+  },
+  {
+    id: 6,
+    name: 'Loren',
+    definition: 'Lorem ipsum dolor sit amet',
+    defaultDisplay: 'Etiam vehicula tincidunt nulla',
+    icon: 'car',
+  },
+  {
+    id: 7,
+    name: 'Ipsun',
+    definition: 'Lorem ipsum dolor sit amet',
+    defaultDisplay: 'Etiam vehicula tincidunt nulla',
+    icon: 'calendar',
+  },
 ];
 
 export const tags = [

@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <TheHeader />
-    <router-view></router-view>
+    <div class='content'>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -21,9 +23,13 @@ export default {
   background: $porcelain;
   color: #2c3e50;
 
-  height: 100vh;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
+  // height: 100vh;
+  // overflow: hidden;
+  // display: flex;
+  // flex-direction: column;
+
+  .content {
+    height: 94vh;
+  }
 }
 </style>

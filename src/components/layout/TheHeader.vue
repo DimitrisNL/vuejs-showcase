@@ -36,6 +36,7 @@ export default {
 .header {
   background: $elephant;
   color: #fff;
+  min-height: 6vh;
 
   .header-menu {
     list-style: none;
