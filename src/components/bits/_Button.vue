@@ -17,6 +17,7 @@ export default {
     :class='theme'
     @click='handleClick'
   >
+    <slot></slot>
     {{label}}
   </button>
 

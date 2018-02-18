@@ -8,7 +8,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.fieldTypes = fieldTypes;
-      this.tags = tags;
+      this.tags.list = tags;
     }, 1200);
   },
   data() {
@@ -21,7 +21,10 @@ export default {
         referenceName: '',
       },
       fieldTypes: [],
-      tags: [],
+      tags: {
+        list: [],
+        selected: [],
+      },
     };
   },
   computed: {
@@ -36,6 +39,13 @@ export default {
     handleButtonClick(message) {
       // eslint-disable-next-line
       alert(message);
+    },
+    handleTagPopulation(tag) {
+      this.tags.selected = tag.children;
+    },
+    handleTagSelection(tag) {
+      // eslint-disable-next-line
+      alert(tag.name);
     },
   },
 };
@@ -91,43 +101,52 @@ export default {
             </div>
             <div>
               <h3 class='mb-4'>Tags</h3>
-
               <div class='row'>
                 <div class='half column'>
                   <div class='mb-3'>Tag Group</div>
-                  <TagsGroup :tags='tags'/>
-                  </div>
-
-
+                  <TagsGroup
+                    :tags='tags.list'
+                    @onClick='handleTagPopulation'
+                  />
+                </div>
                 <div class='half column'>
                   <div class='mb-3'>Tag Group</div>
-                  <small><em>Select a tag group to see individual tags</em></small>
-                  </div>
-
+                  <small v-if='tags.selected.length === 0'>
+                    <em>Select a tag group to see individual tags</em>
+                  </small>
+                  <TagsGroup
+                    v-if='tags.selected.length >= 0'
+                    :tags='tags.selected'
+                    @onClick='handleTagSelection'
+                  />
                 </div>
-
+              </div>
             </div>
           </div>
           <div class='one-third column flex'>
             <div class='groups-wrapper flex-grow pt-4 pb-4 pl-4 pr-4'>
-
-            <h3 class='mb-3'>Field Groups</h3>
-            <small>Choose a group for this input</small>
+              <h3 class='mb-3'>Field Groups</h3>
+              <small>Choose a group for this input</small>
+              <!-- <div>
+                <div>
+                  <div>Rental Coverage Package</div>
+                  <small>7 other inputs</small>
+                </div>
+                </div> -->
             </div>
-
           </div>
         </div>
       </div>
     </section>
-      <div class='flex align-center justify-between'>
-    <div>
-      <Button label='Save Changes' theme='success'  @onClick='handleButtonClick("Success")'/>
+    <div class='flex align-center justify-between'>
+      <div>
+        <Button label='Save Changes' theme='success'  @onClick='handleButtonClick("Success")'/>
+      </div>
+      <div>
+        <Button label='Cancel Changes' theme='neutral'  @onClick='handleButtonClick("Canceled")'/>
+        <Button label='Delete Input' theme='danger' @onClick='handleButtonClick("Deleted!") '/>
+      </div>
     </div>
-    <div>
-      <Button label='Cancel Changes' theme='neutral'  @onClick='handleButtonClick("Canceled")'/>
-      <Button label='Delete Input' theme='danger' @onClick='handleButtonClick("Deleted!") '/>
-    </div>
-  </div>
   </div>
 </template>
 

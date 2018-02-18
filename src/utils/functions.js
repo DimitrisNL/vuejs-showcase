@@ -47,31 +47,31 @@ export const tags = [
   {
     id: 1,
     name: 'Vinmaster',
-    children: [{ id: 7, name: 'Another' }, { id: 8, name: 'Tag :)' }],
+    children: [{ id: 7, name: 'Tag 7' }, { id: 8, name: 'Tag 8' }],
   },
   {
     id: 2,
     name: 'ISO',
-    children: [{ id: 9, name: 'Another' }, { id: 10, name: 'Tag :)' }],
+    children: [{ id: 9, name: 'Tag 9' }, { id: 10, name: 'Tag 10' }],
   },
   {
     id: 3,
     name: 'Taggity',
-    children: [{ id: 11, name: 'Another' }, { id: 12, name: 'Tag :)' }],
+    children: [{ id: 11, name: 'Tag 11' }, { id: 12, name: 'Tag 12' }],
   },
   {
     id: 4,
     name: 'Tag',
-    children: [{ id: 13, name: 'Another' }, { id: 14, name: 'Tag :)' }],
+    children: [{ id: 13, name: 'Tag 13' }, { id: 14, name: 'Tag 14' }],
   },
   {
     id: 5,
     name: 'Lorem',
-    children: [{ id: 15, name: 'Another' }, { id: 16, name: 'Tag :)' }],
+    children: [{ id: 15, name: 'Tag 15' }, { id: 16, name: 'Tag 16' }],
   },
   {
     id: 6,
     name: 'Lorem',
-    children: [{ id: 17, name: 'Another' }, { id: 18, name: 'Tag :)' }],
+    children: [{ id: 17, name: 'Tag 17' }, { id: 18, name: 'Tag 18' }],
   },
 ];

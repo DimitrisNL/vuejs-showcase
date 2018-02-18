@@ -22,7 +22,7 @@ Avoiding relative paths.
 scss: generateLoaders('sass', {
   data: "@import 'src/styles/partials/_variables.scss';\n",
   includePaths: ['node_modules', 'bower_components', 'src', '.'],
-  }),
+}),
 ```
 
 #### Spacing
