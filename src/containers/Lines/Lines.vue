@@ -1,23 +1,33 @@
 <script>
+import { required } from 'vuelidate/lib/validators';
+
 import { Button, Card, Field, TagsGroup } from 'components/bits';
-import { fieldTypes, tags } from 'utils/data';
-import { sanitizeString, validateRegex } from 'utils/functions';
+import { dummyFieldTypes, dummyTags } from 'utils/data';
+import { sanitizeString, isValidRegex, hasNoSpaces } from 'utils/functions';
 
 export default {
   name: 'LinesContainer',
   components: { Button, Card, Field, TagsGroup },
+  validations: {
+    form: {
+      displayLabel: { required },
+      defaultValue: { required },
+      customValidation: { isValidRegex },
+      referenceName: { required, hasNoSpaces },
+    },
+  },
   data() {
     return {
       search: '',
-      fieldDetails: {
-        displayLabel: { value: '', hasError: false, required: true },
-        defaultValue: { value: '', hasError: false, required: true },
-        customValidation: { value: '', hasError: false, required: false },
-        referenceName: { value: '', hasError: false, required: true },
+      fieldTypes: dummyFieldTypes,
+      form: {
+        displayLabel: '',
+        defaultValue: '',
+        customValidation: '',
+        referenceName: '',
       },
-      fieldTypes,
       tags: {
-        list: tags,
+        list: dummyTags,
         selected: [],
       },
     };
@@ -31,8 +41,8 @@ export default {
   },
   methods: {
     saveField() {
-      const isValid = this.validateAllFields();
-      if (isValid) {
+      this.$v.form.$touch();
+      if (!this.$v.form.$invalid) {
         // eslint-disable-next-line
         alert('Saved');
       }
@@ -50,23 +60,11 @@ export default {
       console.log(tag.name);
     },
     populateReferenceName() {
-      if (this.fieldDetails.referenceName.value.trim() === '') {
-        const suggestion = sanitizeString(this.fieldDetails.displayLabel.value);
-        this.fieldDetails.referenceName.value = suggestion;
+      this.$v.form.displayLabel.$touch();
+      if (this.form.referenceName.trim() === '') {
+        const suggestion = sanitizeString(this.form.displayLabel);
+        this.form.referenceName = suggestion;
       }
-    },
-    validateRegex() {
-      const isValid = validateRegex(this.fieldDetails.customValidation.value);
-      this.fieldDetails.customValidation.hasError = !isValid;
-    },
-    validateAllFields() {
-      return Object.keys(this.fieldDetails).every(key => {
-        const { value, required } = this.fieldDetails[key];
-        if (required && value.trim() === '') {
-          this.fieldDetails[key].hasError = true;
-        }
-        return !this.fieldDetails[key].hasError;
-      });
     },
   },
 };
@@ -92,7 +90,7 @@ export default {
       <!-- End Sidebar -->
 
       <!-- Main Content -->
-      <div class='main rounded-right d-flex flex-column p-4'>
+      <div class='main bg-white rounded-right d-flex flex-column p-4'>
         <h2 class='mb-3'>Field Details</h2>
 
         <div class='flex-grow row'>
@@ -102,26 +100,27 @@ export default {
             <div class='row'>
               <div class='col-6'>
                 <Field
-                  v-model='fieldDetails.displayLabel.value'
+                  v-model='form.displayLabel'
                   @onBlur='populateReferenceName'
-                  @onFocus='fieldDetails.displayLabel.hasError = false'
-                  :hasError='fieldDetails.displayLabel.hasError'
+                  @onFocus='$v.form.displayLabel.$reset()'
+                  :hasError='$v.form.displayLabel.$error'
                   :space='4'
                   label='Display Label'
                   subLabel='For display purposes, spaces allowed'
                 />
                 <Field
-                  v-model='fieldDetails.defaultValue.value'
-                  @onFocus='fieldDetails.defaultValue.hasError = false'
-                  :hasError='fieldDetails.defaultValue.hasError'
+                  v-model='form.defaultValue'
+                  @onBlur='$v.form.defaultValue.$touch()'
+                  @onFocus='$v.form.defaultValue.$reset()'
+                  :hasError='$v.form.defaultValue.$error'
                   :space='4'
                   label='Default Value'
                 />
                 <Field
-                  v-model='fieldDetails.customValidation.value'
-                  @onFocus='fieldDetails.customValidation.hasError = false'
-                  @onBlur='validateRegex'
-                  :hasError='fieldDetails.customValidation.hasError'
+                  v-model='form.customValidation'
+                  @onBlur='$v.form.customValidation.$touch()'
+                  @onFocus='$v.form.customValidation.$reset()'
+                  :hasError='$v.form.customValidation.$error'
                   :space='4'
                   label='Custom Validation'
                   subLabel='Any regex pattern can
@@ -130,9 +129,10 @@ export default {
               </div>
               <div class='col-6'>
                 <Field
-                  v-model='fieldDetails.referenceName.value'
-                  @onFocus='fieldDetails.referenceName.hasError = false'
-                  :hasError='fieldDetails.referenceName.hasError'
+                  v-model='form.referenceName'
+                  @onBlur='$v.form.referenceName.$touch()'
+                  @onFocus='$v.form.referenceName.$reset()'
+                  :hasError='$v.form.referenceName.$error'
                   :space='4'
                   label='Reference Name'
                   subLabel='Used to reference in calculations,
@@ -205,10 +205,6 @@ export default {
 
 
 <style lang="scss" scoped>
-.title {
-  margin-bottom: 2rem;
-}
-
 .sidebar {
   background: $aqua_haze;
   border-right: 1px solid $granny_smith;
@@ -216,7 +212,6 @@ export default {
   overflow: auto;
 }
 .main {
-  background: #fff;
   flex: 0 0 78%;
   overflow: auto;
   .groups-wrapper {

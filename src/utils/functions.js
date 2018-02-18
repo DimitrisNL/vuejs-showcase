@@ -1,14 +1,17 @@
-// https://stackoverflow.com/questions/17250815/how-to-check-if-the-input-string-is-a-valid-regular-expression
-export const validateRegex = (regex = '') => {
+export const isValidRegex = value => {
   let isValid = true;
 
   try {
-    RegExp(regex);
+    RegExp(value);
   } catch (e) {
     isValid = false;
   }
 
   return isValid;
+};
+
+export const hasNoSpaces = value => {
+  return value.length === value.trim().length;
 };
 
 export const sanitizeString = (string = '') => {

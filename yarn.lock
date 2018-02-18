@@ -3863,6 +3863,10 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
+lodash-es@^4.17.4:
+  version "4.17.5"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.5.tgz#9fc6e737b1c4d151d8f9cae2247305d552ce748f"
+
 lodash._baseget@^3.0.0:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/lodash._baseget/-/lodash._baseget-3.7.2.tgz#1b6ae1d5facf3c25532350a13c1197cb8bb674f4"
@@ -5586,10 +5590,6 @@ safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, s
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
 
-sanitize.css@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/sanitize.css/-/sanitize.css-5.0.0.tgz#84184b40678f72bb8898c768a27be7578257271a"
-
 sass-graph@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/sass-graph/-/sass-graph-2.2.4.tgz#13fbd63cd1caf0908b9fd93476ad43a51d1e0b49"
@@ -6563,6 +6563,16 @@ vue-template-es2015-compiler@^1.6.0:
 vue@^2.5.2:
   version "2.5.13"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.13.tgz#95bd31e20efcf7a7f39239c9aa6787ce8cf578e1"
+
+vuelidate-forms@^0.2.8:
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/vuelidate-forms/-/vuelidate-forms-0.2.8.tgz#9b2ddba99180ead989dcabef46aac7cf4bf5a68f"
+  dependencies:
+    lodash-es "^4.17.4"
+
+vuelidate@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/vuelidate/-/vuelidate-0.6.1.tgz#c52c9fd2b48f974613485e2cf51c182e84bcf747"
 
 watchpack@^1.4.0:
   version "1.4.0"

@@ -1,4 +1,4 @@
-export const fieldTypes = [
+export const dummyFieldTypes = [
   {
     id: 1,
     name: 'Text',
@@ -57,7 +57,7 @@ export const fieldTypes = [
   },
 ];
 
-export const tags = [
+export const dummyTags = [
   {
     id: 1,
     name: 'Vinmaster',
