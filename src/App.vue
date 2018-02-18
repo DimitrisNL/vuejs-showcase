@@ -21,7 +21,7 @@ export default {
 
 #app {
   background: $porcelain;
-  color: #2c3e50;
+  color: $shark;
 
   .content {
     height: 94vh;

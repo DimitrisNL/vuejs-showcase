@@ -6,7 +6,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   font-size: 0.875rem;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 h1,
@@ -15,4 +15,10 @@ h3,
 h4,
 h5 {
   margin: 0;
+}
+
+small {
+  color: $elephant;
+  display: block;
+  font-size: 85%;
 }

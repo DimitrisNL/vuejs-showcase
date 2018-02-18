@@ -5,26 +5,18 @@
 $shark: #202627;
 $porcelain: #f9fbfb;
 $aqua_haze: #eff4f5;
-$white: #fefefe;
 $blue_lagoon: #037c91;
 $elephant: #144852;
-$mine_shaft: #3c3c3c;
 $mexican_red: #a72a2a;
-$granny_smith: #819598;
+$geyser: #c0d1d4;
 
-// Typography
-$headings: $shark;
-
-// Lines
-$border-color: $white;
+$border-color: $geyser;
 $border-radius: 4px;
 $base-transition: 0.1s ease-in-out;
-
 $fa-font-path: '~font-awesome/fonts';
 
 // Bootstrap Overrides
 $grid-gutter-width: 50px;
-
 $spacer: 1rem;
 $spacers: ();
 $spacers: map-merge(

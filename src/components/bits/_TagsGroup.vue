@@ -35,6 +35,7 @@ export default {
 <style lang="scss" scoped>
 .tag {
   background: $aqua-haze;
+  color: $elephant;
   cursor: pointer;
   font-size: 90%;
   &:hover {

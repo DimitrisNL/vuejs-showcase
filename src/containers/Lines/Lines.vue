@@ -207,7 +207,7 @@ export default {
 <style lang="scss" scoped>
 .sidebar {
   background: $aqua_haze;
-  border-right: 1px solid $granny_smith;
+  border-right: 1px solid $border-color;
   flex: 0 0 22%;
   overflow: auto;
 }

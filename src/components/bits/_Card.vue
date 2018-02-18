@@ -20,11 +20,11 @@ export default {
     </h3>
 
     <div class='mb-3 entry'>
-      <small class='mb-2'>Definition</small>
+      <small class='mb-2 small'>Definition</small>
         {{fieldType.definition}}
       </div>
     <div class='entry'>
-      <small class='mb-2'>Default Display</small>
+      <small class='mb-2 small'>Default Display</small>
       {{fieldType.defaultDisplay}}
     </div>
   </div>
@@ -45,6 +45,9 @@ export default {
   &:hover {
     background: $blue_lagoon;
     color: #fff;
+    .small {
+      color: darken(#fff, 10%);
+    }
   }
 }
 </style>

@@ -57,7 +57,7 @@ export default {
         @focus='handleFocus'
         />
     </label>
-    <small v-if="subLabel" class='mt-1'>{{subLabel}}</small>
+    <small v-if="subLabel" class='mt-2'>{{subLabel}}</small>
   </div>
 
 </template>
