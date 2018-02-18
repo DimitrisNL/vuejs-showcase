@@ -15,13 +15,14 @@
 
 #### Webpack Adjustments for SCSS
 
-Including SCSS variables in every .vue file, as well as ignoring annoying relative paths when importing stuff.
+Including SCSS variables in every .vue file.
+Avoiding relative paths.
 
 ```js
 scss: generateLoaders('sass', {
   data: "@import 'src/styles/partials/_variables.scss';\n",
   includePaths: ['node_modules', 'bower_components', 'src', '.'],
-    }),
+  }),
 ```
 
 #### Spacing
@@ -33,7 +34,7 @@ Hat's off to [furey](https://github.com/furey) for the sweet mixin I've modified
 #### CSS Framework
 
 None.
-Something which actually could have saved a lot of time when it comes to grid.
+Something which actually could have saved a lot of time.
 Probably should have included Bootstrap 4 grid and flex utilities.
 
 ### Build Setup
