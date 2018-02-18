@@ -1,5 +1,6 @@
 <script>
 import { Button } from 'components/bits';
+
 export default {
   components: { Button },
   name: 'ButtonsRow',
@@ -8,13 +9,13 @@ export default {
 
 <template>
 
-    <div class='row pt-5'>
-      <div>
-      <Button label='Save Changes' theme='success'/>
-      </div>
+  <div class='row pt-5'>
     <div>
-      <Button label='Cancel Changes' theme='neutral'/>
-      <Button label='Delete Input' theme='danger'/>
+      <Button label='Save Changes' theme='success' />
+    </div>
+    <div>
+      <Button label='Cancel Changes' theme='neutral' />
+      <Button label='Delete Input' theme='danger' />
     </div>
   </div>
 

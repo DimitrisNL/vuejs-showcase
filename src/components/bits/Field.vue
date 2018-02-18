@@ -6,12 +6,14 @@ export default {
 </script>
 
 <template>
-  <label class='mb-5'>
-    <div class='mb-3'>
-      {{label}}
-    </div>
-    <input class='input pt-3 pr-3 pb-3 pl-3'/>
-  </label>
+  <div class='mb-3'>
+    <label>
+      <div class='mb-3'>
+        {{label}}
+      </div>
+      <input class='input pt-3 pr-3 pb-3 pl-3'/>
+    </label>
+  </div>
 
 </template>
 

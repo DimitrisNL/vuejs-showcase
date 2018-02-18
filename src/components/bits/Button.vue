@@ -32,10 +32,16 @@ export default {
     &:hover {
       background: darken($blue_lagoon, 5%);
     }
+    &:active {
+      background: darken($blue_lagoon, 10%);
+    }
   }
   &.neutral {
     &:hover {
       background: darken(#fff, 5%);
+    }
+    &:active {
+      background: darken(#fff, 10%);
     }
   }
   &.danger {
@@ -43,6 +49,9 @@ export default {
     color: #fff;
     &:hover {
       background: darken($mexican_red, 5%);
+    }
+    &:active {
+      background: darken($mexican_red, 10%);
     }
   }
 }

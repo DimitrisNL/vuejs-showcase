@@ -13,7 +13,7 @@ export default {
 
 <template>
   <header class='header pt-3 pb-3 pl-5 pr-5'>
-    <h2 class='mr-5'>BriteCore</h2>
+    <h1 class='mr-6'>BriteCore</h1>
     <ul class='header-menu'>
       <router-link
         class='menu-item pt-2 pb-2 pl-3 pr-3 mr-2 ml-2'
@@ -25,7 +25,7 @@ export default {
         <a>
           <i :class="`fa fa-${route.icon} mr-2`"></i>
           {{route.name}}
-          </a>
+        </a>
       </router-link>
     </ul>
   </header>
@@ -47,7 +47,7 @@ export default {
 
     .menu-item {
       border-radius: $border-radius;
-      font-size: 90%;
+      font-size: 95%;
       transition: all $base-transition;
 
       &:hover,

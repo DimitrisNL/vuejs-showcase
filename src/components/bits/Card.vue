@@ -11,11 +11,11 @@ export default {
     <h3 class='mb-4'>{{fieldType.name}}</h3>
 
     <div class='mb-4 row'>
-      <small class='mb-2'>Definition</small>
+      <small class='mb-3'>Definition</small>
         {{fieldType.definition}}
       </div>
     <div class='row'>
-      <small class='mb-2'>Default Display</small>
+      <small class='mb-3'>Default Display</small>
       {{fieldType.defaultDisplay}}
     </div>
   </div>
