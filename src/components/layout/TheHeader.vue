@@ -12,18 +12,18 @@ export default {
 </script>
 
 <template>
-  <header class='header flex align-center pt-3 pb-3 pl-5 pr-5'>
-    <h1 class='mr-6'>BriteCore</h1>
-    <ul class='header-menu flex'>
+  <header class='header d-flex align-items-center py-2 px-4'>
+    <h1 class='mr-5'>BriteCore</h1>
+    <ul class='header-menu p-0 m-0 d-flex'>
       <router-link
-        class='menu-item pt-2 pb-2 pl-3 pr-3 mr-2 ml-2'
+        class='menu-item px-2 py-1 mr-2'
         tag="li"
         v-for='route in routes'
         :key='route.key'
         :to='route.path'
         exact>
         <a>
-          <i :class="`fa fa-${route.icon} mr-2`"></i>
+          <i :class="`fa fa-${route.icon} mr-1`"></i>
           {{route.name}}
         </a>
       </router-link>
@@ -39,8 +39,6 @@ export default {
 
   .header-menu {
     list-style: none;
-    margin: 0;
-    padding: 0;
 
     .menu-item {
       border-radius: $border-radius;

@@ -12,17 +12,15 @@ export default {
 
 <template>
 
-  <div class='row small-gutter'>
-
-    <div class='column' v-for="tag in tags" :key='tag.id'>
-      <div
-        class='tag pt-2 pr-3 pb-2 pl-3 mb-3'
-        @click='handleTagSelection(tag)'
-      >
-        {{tag.name}}
-      </div>
+  <div class='d-flex flex-wrap'>
+    <div
+      v-for="tag in tags"
+      :key='tag.id'
+      class='bordered tag py-1 px-2 mb-2 mr-2'
+      @click='handleTagSelection(tag)'
+    >
+      {{tag.name}}
     </div>
-
   </div>
 
 </template>
@@ -31,8 +29,7 @@ export default {
 <style lang="scss" scoped>
 .tag {
   background: $aqua-haze;
-  border: 1px solid $granny_smith;
-  border-radius: $border-radius;
+  cursor: pointer;
   font-size: 90%;
   &:hover {
     background: darken($aqua-haze, 5%);

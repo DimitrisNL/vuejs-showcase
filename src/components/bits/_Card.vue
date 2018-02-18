@@ -7,18 +7,18 @@ export default {
 
 <template>
 
-  <div class='card pt-4 pr-4 pl-4 pb-4'>
-    <h3 class='mb-4'>
-      <i :class="`fa fa-${fieldType.icon} mr-2`"></i>
+  <div class='bordered card p-3 my-2'>
+    <h3 class='mb-3'>
+      <i :class="`fa fa-${fieldType.icon} mr-1`"></i>
       {{fieldType.name}}
     </h3>
 
-    <div class='mb-4 entry'>
-      <small class='mb-3'>Definition</small>
+    <div class='mb-3 entry'>
+      <small class='mb-2'>Definition</small>
         {{fieldType.definition}}
       </div>
     <div class='entry'>
-      <small class='mb-3'>Default Display</small>
+      <small class='mb-2'>Default Display</small>
       {{fieldType.defaultDisplay}}
     </div>
   </div>
@@ -29,11 +29,8 @@ export default {
 <style lang="scss" scoped>
 .card {
   background: #fff;
-  border: 1px solid $granny_smith;
-  border-radius: $border-radius;
   cursor: pointer;
   transition: all $base-transition;
-  margin: 1rem 0;
 
   .entry {
     font-size: 95%;

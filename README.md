@@ -6,11 +6,6 @@
 
 [Production build on Netlify](https://nostalgic-goldberg-c2ac24.netlify.com/)
 
-### Dependencies
-
-* sanitize.css for some basic css normalization
-* font-awesome 4
-
 ### Some notes on CSS
 
 #### Webpack Adjustments for SCSS
@@ -25,17 +20,21 @@ scss: generateLoaders('sass', {
 }),
 ```
 
-#### Spacing
-
-I'm using `0.125`, `0.25`, `0.5`, `1`, `2`, `4` (rem) thorough the project.
-
-Hat's off to [furey](https://github.com/furey) for the sweet mixin I've modified, found [here](https://github.com/jgthms/bulma/issues/451).
-
 #### CSS Framework
 
-None.
-Something which actually could have saved a lot of time.
-Probably should have included Bootstrap 4 grid and flex utilities.
+Bootstrap 4 parts.
+Flex and spacing utilities where too good to ignore.
+Having a Flex grid is also nice.
+
+```
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/grid';
+```
 
 ### Build Setup
 

@@ -1,21 +1,11 @@
 <script>
 export default {
   name: 'ContactsContainer',
-  data() {
-    return {};
-  },
 };
 </script>
 
 <template>
-  <div class='content'>
-    <h1 class='title light-weight'>Contacts</h1>
+  <div class='content p-4'>
+    <h1 class='mb-2'>Contacts</h1>
   </div>
 </template>
-
-
-<style lang="scss" scoped>
-.title {
-  margin-bottom: 2rem;
-}
-</style>

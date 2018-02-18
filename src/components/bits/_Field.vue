@@ -4,7 +4,7 @@ export default {
   props: ['label', 'subLabel', 'space', 'fieldValue'],
   computed: {
     spacing() {
-      return `mb-${this.space || 3}`;
+      return `mb-${this.space || 2}`;
     },
   },
   methods: {
@@ -17,17 +17,17 @@ export default {
 
 <template>
   <div :class='spacing'>
-    <label>
-      <div class='mb-3'>
+    <label class='w-100 mb-0'>
+      <div class='mb-2'>
         {{label}}
       </div>
       <input
-        class='input pt-3 pr-3 pb-3 pl-3'
+        class='bordered input bg-white p-2 w-100'
         :value='fieldValue'
         @input='handleInput($event.target.value)'
         />
     </label>
-    <small v-if="subLabel" class='mt-3'>{{subLabel}}</small>
+    <small v-if="subLabel" class='mt-1'>{{subLabel}}</small>
   </div>
 
 </template>
@@ -35,10 +35,6 @@ export default {
 
 <style lang="scss" scoped>
 .input {
-  background: #fff;
-  border: 1px solid $granny_smith;
-  border-radius: $border-radius;
   height: 35px;
-  width: 100%;
 }
 </style>

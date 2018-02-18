@@ -1,7 +1,7 @@
 <script>
 export default {
   name: 'Button',
-  props: ['label', 'theme', 'onClick'],
+  props: ['theme', 'onClick'],
   methods: {
     handleClick() {
       this.$emit('onClick');
@@ -12,13 +12,8 @@ export default {
 
 <template>
 
-  <button
-    class='button pt-3 pb-3 pl-4 pr-4'
-    :class='theme'
-    @click='handleClick'
-  >
+  <button class='bordered button py-2 px-3' :class='theme' @click='handleClick'>
     <slot></slot>
-    {{label}}
   </button>
 
 </template>
@@ -27,9 +22,7 @@ export default {
 <style lang="scss" scoped>
 .button {
   background: #fff;
-  border-radius: $border-radius;
   box-shadow: none;
-  border: 1px solid $granny_smith;
   cursor: pointer;
   outline: none;
   transition: all $base-transition;
