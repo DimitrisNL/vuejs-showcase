@@ -14,32 +14,46 @@ export const fieldTypes = [
     icon: 'calendar',
   },
   {
+    id: 3,
+    name: 'VIN',
+    definition: 'Vehicle Indentification Number',
+    defaultDisplay: 'Free-form text Input',
+    icon: 'car',
+  },
+  {
     id: 4,
     name: 'Checkbox',
-    definition: 'Lorem ipsum dolor sit amet',
-    defaultDisplay: 'Etiam vehicula tincidunt nulla',
-    icon: 'checkbox',
+    definition: 'Toggle Between States',
+    defaultDisplay: 'Checkbox',
+    icon: 'check-square',
   },
   {
     id: 5,
-    name: 'Ipsum',
+    name: 'Lorem',
     definition: 'Lorem ipsum dolor sit amet',
     defaultDisplay: 'Etiam vehicula tincidunt nulla',
     icon: 'header',
   },
   {
     id: 6,
-    name: 'Loren',
+    name: 'Ipsum',
     definition: 'Lorem ipsum dolor sit amet',
     defaultDisplay: 'Etiam vehicula tincidunt nulla',
     icon: 'car',
   },
   {
     id: 7,
-    name: 'Ipsun',
+    name: 'Lorem',
     definition: 'Lorem ipsum dolor sit amet',
     defaultDisplay: 'Etiam vehicula tincidunt nulla',
-    icon: 'calendar',
+    icon: 'header',
+  },
+  {
+    id: 8,
+    name: 'Ipsum',
+    definition: 'Lorem ipsum dolor sit amet',
+    defaultDisplay: 'Etiam vehicula tincidunt nulla',
+    icon: 'car',
   },
 ];
 
@@ -66,12 +80,12 @@ export const tags = [
   },
   {
     id: 5,
-    name: 'Lorem',
+    name: 'Lovren',
     children: [{ id: 15, name: 'Tag 15' }, { id: 16, name: 'Tag 16' }],
   },
   {
     id: 6,
-    name: 'Lorem',
+    name: 'Ipsum',
     children: [{ id: 17, name: 'Tag 17' }, { id: 18, name: 'Tag 18' }],
   },
 ];

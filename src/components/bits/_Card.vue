@@ -13,7 +13,7 @@ export default {
 
 <template>
 
-  <div class='bordered card p-3 mb-4'>
+  <div class='bordered card p-3 mb-3'>
     <h3 class='mb-3'>
       <i :class="`fa fa-${fieldType.icon} mr-1`"></i>
       {{fieldType.name}}

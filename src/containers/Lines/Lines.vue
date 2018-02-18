@@ -63,21 +63,19 @@ export default {
 
 
 <template>
-  <div class='d-flex flex-column h-100 p-4'>
-    <h1 class='font-weight-normal mb-4'>Commercial Property - Add Field</h1>
+  <div class='d-flex flex-column h-100'>
+    <h1 class='font-weight-light mb-4'>Commercial Property - Add Field</h1>
 
     <section class='bordered d-flex mb-4 min-h-0 flex-grow'>
 
       <!-- Sidebar  -->
       <div class='sidebar rounded-left d-flex flex-column p-4'>
-        <div>
-          <h2 class='mb-3'>Field Types</h2>
+        <h2 class='mb-3'>Field Types</h2>
 
-          <Field label='Filter Types' v-model='search' :space='4' />
+        <Field label='Filter Types' v-model='search' :space='3' />
 
-          <div v-for="fieldType in filteredList" :key='fieldType.id'>
-            <Card :fieldType=fieldType />
-          </div>
+        <div v-for="fieldType in filteredList" :key='fieldType.id'>
+          <Card :fieldType=fieldType />
         </div>
       </div>
       <!-- End Sidebar -->
@@ -91,24 +89,24 @@ export default {
           <div class='col-8'>
             <!-- Inputs Row-->
             <div class='row'>
-              <div class='col-6 mb-4'>
+              <div class='col-6'>
                 <Field
                   v-model='fieldDetails.displayLabel.value'
                   @onBlur='populateReferenceName'
-                  :space='5'
+                  :space='4'
                   label='Display Label'
                   subLabel='For display purposes, spaces allowed'
                 />
                 <Field
                   v-model='fieldDetails.defaultValue.value'
-                  :space='5'
+                  :space='4'
                   label='Default Value'
                 />
                 <Field
                   v-model='fieldDetails.customValidation.value'
                   @onBlur='validateRegex'
                   :hasError='fieldDetails.customValidation.hasError'
-                  :space='5'
+                  :space='4'
                   label='Custom Validation'
                   subLabel='Any regex pattern can
                   be used for custom input validation'
@@ -117,7 +115,7 @@ export default {
               <div class='col-6'>
                 <Field
                   v-model='fieldDetails.referenceName.value'
-                  :space='5'
+                  :space='4'
                   label='Reference Name'
                   subLabel='Used to reference in calculations,
                   no space allowed'
@@ -196,16 +194,13 @@ export default {
 .sidebar {
   background: $aqua_haze;
   border-right: 1px solid $granny_smith;
-  flex: 0 0 20%;
-
-  > div {
-    flex-grow: 1;
-    overflow: auto;
-  }
+  flex: 0 0 22%;
+  overflow: auto;
 }
 .main {
   background: #fff;
-  flex: 0 0 80%;
+  flex: 0 0 78%;
+  overflow: auto;
   .groups-wrapper {
     background: $porcelain;
   }
