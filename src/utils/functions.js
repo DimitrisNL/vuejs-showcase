@@ -4,14 +4,14 @@ export const fieldTypes = [
     name: 'Text',
     definition: 'String of Text',
     defaultDisplay: 'Free-form text Input',
-    icon: 'h',
+    icon: 'header',
   },
   {
     id: 2,
     name: 'Date',
     definition: 'Standard ISO format date',
     defaultDisplay: 'Datepicker, with configurable format',
-    icon: 'date',
+    icon: 'calendar',
   },
   // {
   //   id: 4,

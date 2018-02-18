@@ -1,7 +1,7 @@
 <script>
 export default {
   name: 'Field',
-  props: ['label', 'subLabel', 'space'],
+  props: ['label', 'subLabel', 'space', 'fieldValue'],
   computed: {
     spacing() {
       return `mb-${this.space || 3}`;

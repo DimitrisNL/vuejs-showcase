@@ -1,11 +1,10 @@
 <script>
-import { Card, Field, TagsGroup } from 'components/bits';
-import ButtonsRow from 'components/layout/ButtonsRow';
+import { Button, Card, Field, TagsGroup } from 'components/bits';
 import { fieldTypes, tags } from 'utils/functions';
 
 export default {
   name: 'LinesContainer',
-  components: { Card, Field, ButtonsRow, TagsGroup },
+  components: { Button, Card, Field, TagsGroup },
   mounted() {
     setTimeout(() => {
       this.fieldTypes = fieldTypes;
@@ -33,6 +32,12 @@ export default {
       );
     },
   },
+  methods: {
+    handleButtonClick(message) {
+      // eslint-disable-next-line
+      alert(message);
+    },
+  },
 };
 </script>
 
@@ -40,7 +45,7 @@ export default {
 <template>
   <div class='content pt-5 pr-5 pb-5 pl-5'>
     <h1 class='w-300 mb-5'>Commercial Property - Add Field</h1>
-    <section class='container'>
+    <section class='container mb-5'>
       <div class='container-side pt-4 pb-4 pl-4 pr-4'>
         <div>
           <h2 class='mb-4'>Field Types</h2>
@@ -95,7 +100,8 @@ export default {
 
 
                 <div class='half column'>
-                  Tags
+                  <div class='mb-3'>Tag Group</div>
+                  <small><em>Select a tag group to see individual tags</em></small>
                   </div>
 
                 </div>
@@ -113,7 +119,15 @@ export default {
         </div>
       </div>
     </section>
-    <ButtonsRow />
+      <div class='flex align-center justify-between'>
+    <div>
+      <Button label='Save Changes' theme='success'  @onClick='handleButtonClick("Success")'/>
+    </div>
+    <div>
+      <Button label='Cancel Changes' theme='neutral'  @onClick='handleButtonClick("Canceled")'/>
+      <Button label='Delete Input' theme='danger' @onClick='handleButtonClick("Deleted!") '/>
+    </div>
+  </div>
   </div>
 </template>
 

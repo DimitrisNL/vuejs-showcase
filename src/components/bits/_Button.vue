@@ -1,13 +1,24 @@
 <script>
 export default {
   name: 'Button',
-  props: ['label', 'theme'],
+  props: ['label', 'theme', 'onClick'],
+  methods: {
+    handleClick() {
+      this.$emit('onClick');
+    },
+  },
 };
 </script>
 
 <template>
 
-  <button class='button pt-3 pb-3 pl-4 pr-4' :class='theme'>{{label}}</button>
+  <button
+    class='button pt-3 pb-3 pl-4 pr-4'
+    :class='theme'
+    @click='handleClick'
+  >
+    {{label}}
+  </button>
 
 </template>
 

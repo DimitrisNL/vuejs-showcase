@@ -12,9 +12,9 @@ export default {
 </script>
 
 <template>
-  <header class='header pt-3 pb-3 pl-5 pr-5'>
+  <header class='header flex align-center pt-3 pb-3 pl-5 pr-5'>
     <h1 class='mr-6'>BriteCore</h1>
-    <ul class='header-menu'>
+    <ul class='header-menu flex'>
       <router-link
         class='menu-item pt-2 pb-2 pl-3 pr-3 mr-2 ml-2'
         tag="li"
@@ -34,13 +34,10 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  align-items: center;
   background: $elephant;
   color: #fff;
-  display: flex;
 
   .header-menu {
-    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;

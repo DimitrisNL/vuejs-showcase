@@ -28,7 +28,7 @@ scss: generateLoaders('sass', {
 
 I'm using `0.125`, `0.25`, `0.5`, `1`, `2`, `4` (rem) thorough the project.
 
-Hat's off to X for the sweet mixin I'm using.
+Hat's off to [furey](https://github.com/furey) for the sweet mixin I've modified, found [here](https://github.com/jgthms/bulma/issues/451).
 
 #### CSS Framework
 

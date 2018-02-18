@@ -8,7 +8,10 @@ export default {
 <template>
 
   <div class='card pt-4 pr-4 pl-4 pb-4'>
-    <h3 class='mb-4'>{{fieldType.name}}</h3>
+    <h3 class='mb-4'>
+      <i :class="`fa fa-${fieldType.icon} mr-2`"></i>
+      {{fieldType.name}}
+    </h3>
 
     <div class='mb-4 entry'>
       <small class='mb-3'>Definition</small>
