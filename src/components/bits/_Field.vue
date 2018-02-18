@@ -35,6 +35,9 @@ export default {
     handleBlur() {
       this.$emit('onBlur');
     },
+    handleFocus() {
+      this.$emit('onFocus');
+    },
   },
 };
 </script>
@@ -51,6 +54,7 @@ export default {
         :value='value'
         @input='handleInput($event.target.value)'
         @blur='handleBlur'
+        @focus='handleFocus'
         />
     </label>
     <small v-if="subLabel" class='mt-1'>{{subLabel}}</small>

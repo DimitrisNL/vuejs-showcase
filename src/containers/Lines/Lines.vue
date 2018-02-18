@@ -1,5 +1,4 @@
 <script>
-/* eslint-disable no-console */
 import { Button, Card, Field, TagsGroup } from 'components/bits';
 import { fieldTypes, tags } from 'utils/data';
 import { sanitizeString, validateRegex } from 'utils/functions';
@@ -11,10 +10,10 @@ export default {
     return {
       search: '',
       fieldDetails: {
-        displayLabel: { value: '', hasError: false },
-        defaultValue: { value: '', hasError: false },
-        customValidation: { value: '', hasError: false },
-        referenceName: { value: '', hasError: false },
+        displayLabel: { value: '', hasError: false, required: true },
+        defaultValue: { value: '', hasError: false, required: true },
+        customValidation: { value: '', hasError: false, required: false },
+        referenceName: { value: '', hasError: false, required: true },
       },
       fieldTypes,
       tags: {
@@ -26,14 +25,17 @@ export default {
   computed: {
     filteredList() {
       return this.fieldTypes.filter(type =>
-        // eslint-disable-next-line
         type.name.toLowerCase().includes(this.search.toLowerCase())
       );
     },
   },
   methods: {
     saveField() {
-      console.log('saved');
+      const isValid = this.validateAllFields();
+      if (isValid) {
+        // eslint-disable-next-line
+        alert('Saved');
+      }
     },
     resetField() {
       console.log('resetted');
@@ -56,6 +58,15 @@ export default {
     validateRegex() {
       const isValid = validateRegex(this.fieldDetails.customValidation.value);
       this.fieldDetails.customValidation.hasError = !isValid;
+    },
+    validateAllFields() {
+      return Object.keys(this.fieldDetails).every(key => {
+        const { value, required } = this.fieldDetails[key];
+        if (required && value.trim() === '') {
+          this.fieldDetails[key].hasError = true;
+        }
+        return !this.fieldDetails[key].hasError;
+      });
     },
   },
 };
@@ -93,17 +104,22 @@ export default {
                 <Field
                   v-model='fieldDetails.displayLabel.value'
                   @onBlur='populateReferenceName'
+                  @onFocus='fieldDetails.displayLabel.hasError = false'
+                  :hasError='fieldDetails.displayLabel.hasError'
                   :space='4'
                   label='Display Label'
                   subLabel='For display purposes, spaces allowed'
                 />
                 <Field
                   v-model='fieldDetails.defaultValue.value'
+                  @onFocus='fieldDetails.defaultValue.hasError = false'
+                  :hasError='fieldDetails.defaultValue.hasError'
                   :space='4'
                   label='Default Value'
                 />
                 <Field
                   v-model='fieldDetails.customValidation.value'
+                  @onFocus='fieldDetails.customValidation.hasError = false'
                   @onBlur='validateRegex'
                   :hasError='fieldDetails.customValidation.hasError'
                   :space='4'
@@ -115,6 +131,8 @@ export default {
               <div class='col-6'>
                 <Field
                   v-model='fieldDetails.referenceName.value'
+                  @onFocus='fieldDetails.referenceName.hasError = false'
+                  :hasError='fieldDetails.referenceName.hasError'
                   :space='4'
                   label='Reference Name'
                   subLabel='Used to reference in calculations,

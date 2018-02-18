@@ -11,7 +11,6 @@ export const validateRegex = (regex = '') => {
   return isValid;
 };
 
-// eslint-disable-next-line
 export const sanitizeString = (string = '') => {
   return string
     .toLowerCase()
