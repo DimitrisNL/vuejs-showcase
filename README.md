@@ -23,7 +23,7 @@ scss: generateLoaders('sass', {
 #### CSS Framework
 
 Bootstrap 4 parts.
-Flex and spacing utilities where too good to ignore.
+Flex and spacing utilities were too good to ignore.
 Having a Flex grid is also nice.
 
 ```

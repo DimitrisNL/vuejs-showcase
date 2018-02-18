@@ -10,4 +10,8 @@
 .bordered {
   border: 1px solid $granny_smith;
   border-radius: $border-radius;
+
+  &.error {
+    border-color: $mexican-red;
+  }
 }

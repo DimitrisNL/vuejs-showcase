@@ -15,10 +15,10 @@ export const fieldTypes = [
   },
   {
     id: 4,
-    name: 'Lorem',
+    name: 'Checkbox',
     definition: 'Lorem ipsum dolor sit amet',
     defaultDisplay: 'Etiam vehicula tincidunt nulla',
-    icon: 'car',
+    icon: 'checkbox',
   },
   {
     id: 5,

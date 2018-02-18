@@ -1,7 +1,16 @@
 <script>
 export default {
   name: 'Button',
-  props: ['theme', 'onClick'],
+  props: {
+    theme: {
+      type: String,
+      default: 'neutral',
+    },
+    className: {
+      type: String,
+      default: '',
+    },
+  },
   methods: {
     handleClick() {
       this.$emit('onClick');
@@ -12,7 +21,11 @@ export default {
 
 <template>
 
-  <button class='bordered button py-2 px-3' :class='theme' @click='handleClick'>
+  <button
+    class='bordered button py-2 px-3'
+    :class='[theme, className]'
+    @click='handleClick'
+  >
     <slot></slot>
   </button>
 

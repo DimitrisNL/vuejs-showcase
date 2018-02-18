@@ -1,6 +1,12 @@
 <script>
 export default {
-  props: ['fieldType'],
+  props: {
+    fieldType: {
+      type: Object,
+      default: () => {},
+      required: true,
+    },
+  },
   name: 'Card',
 };
 </script>

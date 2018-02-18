@@ -1,28 +1,24 @@
 <script>
+/* eslint-disable no-console */
 import { Button, Card, Field, TagsGroup } from 'components/bits';
 import { fieldTypes, tags } from 'utils/data';
+import { sanitizeString, validateRegex } from 'utils/functions';
 
 export default {
   name: 'LinesContainer',
   components: { Button, Card, Field, TagsGroup },
-  mounted() {
-    setTimeout(() => {
-      this.fieldTypes = fieldTypes;
-      this.tags.list = tags;
-    }, 1200);
-  },
   data() {
     return {
       search: '',
       fieldDetails: {
-        displayLabel: '',
-        defaultvalue: '',
-        customValidation: '',
-        referenceName: '',
+        displayLabel: { value: '', hasError: false },
+        defaultValue: { value: '', hasError: false },
+        customValidation: { value: '', hasError: false },
+        referenceName: { value: '', hasError: false },
       },
-      fieldTypes: [],
+      fieldTypes,
       tags: {
-        list: [],
+        list: tags,
         selected: [],
       },
     };
@@ -36,16 +32,30 @@ export default {
     },
   },
   methods: {
-    handleButtonClick(message) {
-      // eslint-disable-next-line
-      alert(message);
+    saveField() {
+      console.log('saved');
     },
-    handleTagPopulation(tag) {
+    resetField() {
+      console.log('resetted');
+    },
+    deleteField() {
+      console.log('deleted');
+    },
+    populateTags(tag) {
       this.tags.selected = tag.children;
     },
-    handleTagSelection(tag) {
-      // eslint-disable-next-line
-      alert(tag.name);
+    selectTag(tag) {
+      console.log(tag.name);
+    },
+    populateReferenceName() {
+      if (this.fieldDetails.referenceName.value.trim() === '') {
+        const suggestion = sanitizeString(this.fieldDetails.displayLabel.value);
+        this.fieldDetails.referenceName.value = suggestion;
+      }
+    },
+    validateRegex() {
+      const isValid = validateRegex(this.fieldDetails.customValidation.value);
+      this.fieldDetails.customValidation.hasError = !isValid;
     },
   },
 };
@@ -83,31 +93,35 @@ export default {
             <div class='row'>
               <div class='col-6 mb-4'>
                 <Field
-                  v-model='fieldDetails.displayLabel'
+                  v-model='fieldDetails.displayLabel.value'
+                  @onBlur='populateReferenceName'
+                  :space='5'
                   label='Display Label'
                   subLabel='For display purposes, spaces allowed'
+                />
+                <Field
+                  v-model='fieldDetails.defaultValue.value'
                   :space='5'
-                  />
-                <Field
-                  v-model='fieldDetails.defaultValue'
                   label='Default Value'
-                  :space='5' />
+                />
                 <Field
-                  v-model='fieldDetails.customValidation'
+                  v-model='fieldDetails.customValidation.value'
+                  @onBlur='validateRegex'
+                  :hasError='fieldDetails.customValidation.hasError'
+                  :space='5'
                   label='Custom Validation'
                   subLabel='Any regex pattern can
                   be used for custom input validation'
-                  :space='5'
-                  />
+                />
               </div>
               <div class='col-6'>
                 <Field
-                  v-model='fieldDetails.referenceName'
+                  v-model='fieldDetails.referenceName.value'
+                  :space='5'
                   label='Reference Name'
                   subLabel='Used to reference in calculations,
                   no space allowed'
-                  :space='5'
-                  />
+                />
               </div>
             </div>
             <!-- End Inputs Row-->
@@ -120,7 +134,7 @@ export default {
                   <div class='mb-2'>Tag Group</div>
                   <TagsGroup
                     :tags='tags.list'
-                    @onClick='handleTagPopulation'
+                    @onClick='populateTags'
                   />
                 </div>
                 <div class='col-6'>
@@ -131,7 +145,7 @@ export default {
                   <TagsGroup
                     v-if='tags.selected.length >= 0'
                     :tags='tags.selected'
-                    @onClick='handleTagSelection'
+                    @onClick='selectTag'
                   />
                 </div>
               </div>
@@ -158,24 +172,19 @@ export default {
 
     <!-- Buttons Rows -->
     <div class='d-flex align-items-center justify-content-between'>
-      <div>
-        <Button theme='success' @onClick='handleButtonClick("Success")'>
+        <Button theme='success' @onClick='saveField'>
           Save Changes
         </Button>
-      </div>
-      <div>
-        <Button theme='neutral' @onClick='handleButtonClick("Canceled")'>
+        <Button className='ml-auto' @onClick='resetField'>
             Cancel Changes
         </Button>
-        <Button theme='danger' @onClick='handleButtonClick("Deleted!")'>
+        <Button theme='danger' @onClick='deleteField'>
           Delete Input
         </Button>
       </div>
     </div>
     <!-- End Buttons row -->
 
-
-  </div>
 </template>
 
 

@@ -1,15 +1,39 @@
 <script>
 export default {
   name: 'Field',
-  props: ['label', 'subLabel', 'space', 'fieldValue'],
+  props: {
+    label: {
+      type: String,
+      default: '',
+    },
+    subLabel: {
+      type: String,
+      default: '',
+    },
+    space: {
+      type: Number,
+      default: 2,
+    },
+    value: {
+      type: String,
+      default: '',
+    },
+    hasError: {
+      type: Boolean,
+      default: false,
+    },
+  },
   computed: {
     spacing() {
-      return `mb-${this.space || 2}`;
+      return `mb-${this.space}`;
     },
   },
   methods: {
     handleInput(input) {
       this.$emit('input', input);
+    },
+    handleBlur() {
+      this.$emit('onBlur');
     },
   },
 };
@@ -23,8 +47,10 @@ export default {
       </div>
       <input
         class='bordered input bg-white p-2 w-100'
-        :value='fieldValue'
+        :class='{error : hasError}'
+        :value='value'
         @input='handleInput($event.target.value)'
+        @blur='handleBlur'
         />
     </label>
     <small v-if="subLabel" class='mt-1'>{{subLabel}}</small>

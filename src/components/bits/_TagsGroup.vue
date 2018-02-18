@@ -1,7 +1,13 @@
 <script>
 export default {
   name: 'TagsGroup',
-  props: ['tags', 'onClick'],
+  props: {
+    tags: {
+      type: Array,
+      default: () => [],
+      required: true,
+    },
+  },
   methods: {
     handleTagSelection(tag) {
       this.$emit('onClick', tag);
