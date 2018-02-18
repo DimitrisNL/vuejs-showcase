@@ -9,7 +9,7 @@ export default {
 
 <template>
 
-  <div class='row pt-5'>
+  <div class='wrapper pt-5'>
     <div>
       <Button label='Save Changes' theme='success' />
     </div>
@@ -23,7 +23,7 @@ export default {
 
 
 <style lang="scss" scoped>
-.row {
+.wrapper {
   align-items: center;
   display: flex;
   justify-content: space-between;

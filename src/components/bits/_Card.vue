@@ -10,11 +10,11 @@ export default {
   <div class='card pt-4 pr-4 pl-4 pb-4'>
     <h3 class='mb-4'>{{fieldType.name}}</h3>
 
-    <div class='mb-4 row'>
+    <div class='mb-4 entry'>
       <small class='mb-3'>Definition</small>
         {{fieldType.definition}}
       </div>
-    <div class='row'>
+    <div class='entry'>
       <small class='mb-3'>Default Display</small>
       {{fieldType.defaultDisplay}}
     </div>
@@ -32,7 +32,7 @@ export default {
   transition: all $base-transition;
   margin: 1rem 0;
 
-  .row {
+  .entry {
     font-size: 95%;
   }
 
