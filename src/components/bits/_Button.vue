@@ -20,7 +20,6 @@ export default {
 </script>
 
 <template>
-
   <button
     class='bordered button py-2 px-3'
     :class='[theme, className]'
@@ -40,7 +39,14 @@ export default {
   outline: none;
   transition: all $base-transition;
 
-  + button {
+  &:hover {
+    background: darken(#fff, 5%);
+  }
+  &:active {
+    background: darken(#fff, 10%);
+  }
+
+  + .button {
     margin-left: 2rem;
   }
 
@@ -54,14 +60,7 @@ export default {
       background: darken($blue_lagoon, 10%);
     }
   }
-  &.neutral {
-    &:hover {
-      background: darken(#fff, 5%);
-    }
-    &:active {
-      background: darken(#fff, 10%);
-    }
-  }
+
   &.danger {
     background: $mexican_red;
     color: #fff;
@@ -70,6 +69,20 @@ export default {
     }
     &:active {
       background: darken($mexican_red, 10%);
+    }
+  }
+  &.card {
+    width: 100%;
+    text-align: left;
+    + .button {
+      margin-left: 0;
+    }
+    &.selected {
+      background: $blue-lagoon;
+      color: #fff;
+      small {
+        color: darken(#fff, 10%);
+      }
     }
   }
 }

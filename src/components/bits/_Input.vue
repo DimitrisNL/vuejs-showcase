@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Field',
+  name: 'Input',
   props: {
     label: {
       type: String,
@@ -66,5 +66,6 @@ export default {
 <style lang="scss" scoped>
 .input {
   height: 35px;
+  transition: border $base-transition;
 }
 </style>

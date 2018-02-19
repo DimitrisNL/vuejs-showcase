@@ -1,6 +1,7 @@
 import Button from './_Button';
-import Card from './_Card';
-import Field from './_Field';
-import TagsGroup from './_TagsGroup';
+import FieldGroup from './_FieldGroup';
+import FieldType from './_FieldType';
+import Input from './_Input';
+import Tags from './_Tags';
 
-export { Button, Card, Field, TagsGroup };
+export { Button, FieldGroup, FieldType, Input, Tags };

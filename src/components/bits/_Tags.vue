@@ -7,6 +7,11 @@ export default {
       default: () => [],
       required: true,
     },
+    selected: {
+      type: Array,
+      default: () => [],
+      required: false,
+    },
   },
   methods: {
     handleTagSelection(tag) {
@@ -23,6 +28,7 @@ export default {
       v-for="tag in tags"
       :key='tag.id'
       class='bordered tag py-1 px-2 mb-2 mr-2'
+      :class='{selected: selected.includes(tag.id)}'
       @click='handleTagSelection(tag)'
     >
       {{tag.name}}
@@ -43,6 +49,10 @@ export default {
   }
   &:active {
     background: darken($aqua-haze, 10%);
+  }
+  &.selected {
+    background: $blue-lagoon;
+    color: #fff;
   }
 }
 </style>

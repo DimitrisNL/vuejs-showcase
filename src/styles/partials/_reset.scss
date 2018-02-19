@@ -6,3 +6,25 @@ a {
     text-decoration: none;
   }
 }
+
+// reset toastr styles
+
+.toastr-style {
+  top: 1rem !important;
+  right: 0.5rem !important;
+
+  .notification-content {
+    padding: 0.25rem 0.5rem;
+    font-size: 14px;
+  }
+
+  .error {
+    border-left-color: darken($mexican-red, 5%);
+    background: $mexican-red;
+  }
+
+  .success {
+    border-left-color: darken($blue-lagoon, 5%);
+    background: $blue-lagoon;
+  }
+}
