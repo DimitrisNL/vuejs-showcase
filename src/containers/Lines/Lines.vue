@@ -124,16 +124,18 @@ export default {
     <section class='bordered d-flex mb-4 min-h-0 flex-grow'>
 
       <!-- Sidebar  -->
-      <div class='sidebar rounded-left d-flex flex-column p-4'>
-        <h2 class='mb-3'>Field Types</h2>
-        <Input label='Filter Types' v-model='search' :space='3' />
-        <FieldType
-          v-for="fieldType in filteredTypesList"
-          :key='fieldType.id'
-          :item=fieldType
-          :selected='fieldTypes.selected'
-          @onClick='selectFieldType'
-        />
+      <div class='sidebar rounded-left'>
+        <div class='p-4'>
+          <h2 class='mb-3'>Field Types</h2>
+          <Input label='Filter Types' v-model='search' :space='0' />
+          <FieldType
+            v-for="fieldType in filteredTypesList"
+            :key='fieldType.id'
+            :item=fieldType
+            :selected='fieldTypes.selected'
+            @onClick='selectFieldType'
+          />
+          </div>
       </div>
       <!-- End Sidebar -->
 
