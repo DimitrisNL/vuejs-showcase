@@ -13,7 +13,7 @@ export default {
     <div class='content p-4'>
       <router-view></router-view>
     </div>
-    <notifications class='toastr-style' />
+    <notifications class='toastr-style' :duration='1500'/>
   </div>
 </template>
 

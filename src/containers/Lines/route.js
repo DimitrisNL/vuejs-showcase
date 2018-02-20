@@ -1,4 +1,4 @@
-import Lines from './Lines';
+import Lines from './Container';
 
 export default {
   path: '/',

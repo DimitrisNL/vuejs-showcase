@@ -20,3 +20,12 @@ export const sanitizeString = (string = '') => {
     .split(' ')
     .join('_');
 };
+
+export const apiCall = params => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log(params);
+      resolve('Saved');
+    }, 1500);
+  });
+};
