@@ -26,8 +26,8 @@ export default {
         const params = {
           fieldDetails: { ...this.$refs.formSection.fieldDetails },
           fieldGroups: [...this.$refs.groupsSection.selected],
-          fieldTypes: [...this.$refs.typesSection.selected],
           fieldTags: [...this.$refs.tagsSection.selected],
+          fieldTypes: this.$refs.typesSection.selected,
         };
 
         this.$notify({ text: 'Saving..' });
