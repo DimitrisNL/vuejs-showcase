@@ -1,9 +1,5 @@
 # BriteCore Interview - Dimitrios Lytras
 
-:construction: :construction: Still in progress :construction: :construction:
-
-> A project for interview process
-
 [Production build on Netlify](https://nostalgic-goldberg-c2ac24.netlify.com/)
 
 ### Some notes on CSS
