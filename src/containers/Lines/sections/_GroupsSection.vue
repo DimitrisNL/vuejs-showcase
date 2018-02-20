@@ -1,12 +1,9 @@
 <script>
-import { Button, FieldGroup } from 'components/bits';
+import { Button, FieldGroup, Input, Modal } from 'components/bits';
 
 export default {
   name: 'GroupsSection',
-  components: {
-    Button,
-    FieldGroup,
-  },
+  components: { Button, FieldGroup, Input, Modal },
   props: {
     list: {
       type: Array,
@@ -17,6 +14,8 @@ export default {
   data() {
     return {
       selected: [],
+      showModal: false,
+      newGroup: '',
     };
   },
   methods: {
@@ -29,6 +28,22 @@ export default {
     },
     clear() {
       this.selected = [];
+    },
+    saveGroup() {
+      if (this.newGroup.trim() !== '') {
+        const newEntry = {
+          id: this.list.length + 1,
+          count: 0,
+          name: this.newGroup,
+        };
+        this.$emit('updateGroups', newEntry);
+        this.selectGroup(newEntry.id);
+        this.clearGroup();
+      }
+    },
+    clearGroup() {
+      this.newGroup = '';
+      this.showModal = false;
     },
   },
 };
@@ -48,7 +63,13 @@ export default {
         @onClick='selectGroup'
       />
     </div>
-    <Button className='mt-auto'>Add new Group</Button>
+    <Button className='mt-auto' @onClick="showModal = true">Add new Group</Button>
+    <Modal v-if='showModal' @close="clearGroup" @save="saveGroup">
+      <h3 slot="header">Add new Group</h3>
+      <div slot="body">
+        <Input label='Group Name' v-model='newGroup' :space='0' />
+      </div>
+    </Modal>
   </div>
 
 </template>

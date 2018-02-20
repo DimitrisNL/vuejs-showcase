@@ -50,6 +50,9 @@ export default {
       this.resetField();
       this.$notify({ text: 'Field deleted', type: 'success' });
     },
+    updateGroups(group) {
+      this.dummyData.dummyGroups.push(group);
+    },
   },
 };
 </script>
@@ -79,7 +82,11 @@ export default {
             <TagsSection ref='tagsSection' :list='dummyData.dummyTags' />
           </div>
           <div class='col-4 d-flex'>
-            <GroupsSection ref='groupsSection' :list='dummyData.dummyGroups' />
+            <GroupsSection
+              ref='groupsSection'
+              :list='dummyData.dummyGroups'
+              @updateGroups='updateGroups'
+            />
           </div>
 
         </div>
