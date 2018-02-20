@@ -19,7 +19,7 @@ export default {
   computed: {
     className() {
       const selected = this.selected === this.item.id ? 'selected' : '';
-      return `p-3 mt-3 ${selected}`;
+      return `p-3 mt-3 card ${selected}`;
     },
   },
   methods: {
@@ -34,7 +34,6 @@ export default {
 
   <Button
     :className='className'
-    theme='card'
     @onClick='handleClick(item)'>
     <h3 class='mb-3'>
       <i :class="`fa fa-${item.icon} mr-1`"></i>

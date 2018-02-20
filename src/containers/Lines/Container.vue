@@ -91,13 +91,13 @@ export default {
 
     <!-- Actions row -->
     <div class='d-flex align-items-center justify-content-between'>
-        <Button theme='success' @onClick='saveField'>
+        <Button className='success' @onClick='saveField'>
           Save Changes
         </Button>
         <Button className='ml-auto' @onClick='resetField'>
           Cancel Changes
         </Button>
-        <Button theme='danger' @onClick='deleteField'>
+        <Button className='danger' @onClick='deleteField'>
           Delete Input
         </Button>
       </div>

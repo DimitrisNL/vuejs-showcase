@@ -19,7 +19,7 @@ export default {
   computed: {
     className() {
       const selected = this.selected.includes(this.item.id) ? 'selected' : '';
-      return `p-2 mt-3 ${selected}`;
+      return `p-2 mt-3 card ${selected}`;
     },
   },
   methods: {
@@ -34,7 +34,6 @@ export default {
 
   <Button
     :className='className'
-    theme='card'
     @onClick='handleClick(item)'>
       <div class='font-weight-bold'>{{item.name}}</div>
       <small

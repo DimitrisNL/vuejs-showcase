@@ -2,10 +2,6 @@
 export default {
   name: 'Button',
   props: {
-    theme: {
-      type: String,
-      default: 'neutral',
-    },
     className: {
       type: String,
       default: '',
@@ -22,7 +18,7 @@ export default {
 <template>
   <button
     class='bordered button py-2 px-3'
-    :class='[theme, className]'
+    :class='[className]'
     @click='handleClick'
   >
     <slot></slot>
@@ -71,6 +67,7 @@ export default {
       background: darken($mexican_red, 10%);
     }
   }
+
   &.card {
     width: 100%;
     text-align: left;
