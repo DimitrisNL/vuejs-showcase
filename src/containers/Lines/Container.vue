@@ -30,12 +30,13 @@ export default {
           fieldTags: [...this.$refs.tagsSection.selected],
         };
 
-        this.$notify({ text: 'Saving..', type: 'info' });
+        this.$notify({ text: 'Saving..' });
         // Something more sophisticated when it comes to error handling needed
         await apiCall(params);
         this.$notify({ text: 'Field Saved', type: 'success' });
         this.resetField();
       } else {
+        this.$refs.formSection.touch();
         this.$notify({ text: 'Fields incomplete or invalid', type: 'error' });
       }
     },

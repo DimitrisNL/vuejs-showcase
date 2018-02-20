@@ -19,12 +19,12 @@ a {
   }
 
   .error {
-    border-left-color: darken($mexican-red, 5%);
-    background: $mexican-red;
+    border-left-color: darken($mexican-red, 5%) !important;
+    background: $mexican-red !important;
   }
 
   .success {
-    border-left-color: darken($blue-lagoon, 5%);
-    background: $blue-lagoon;
+    border-left-color: darken($blue-lagoon, 5%) !important;
+    background: $blue-lagoon !important;
   }
 }
