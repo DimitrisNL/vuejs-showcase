@@ -13,7 +13,7 @@ export default {
 
 <template>
   <header class='header d-flex align-items-center py-2 px-4'>
-    <h1 class='mr-5'>BriteCore</h1>
+    <h1 class='mr-5'>The Company</h1>
     <ul class='header-menu p-0 m-0 d-flex'>
       <router-link
         class='menu-item px-2 py-1 mr-2'

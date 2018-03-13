@@ -1,7 +1,7 @@
 {
-  "name": "brite_core_project",
+  "name": "vuejs_showcase",
   "version": "1.0.0",
-  "description": "A project for interview process",
+  "description": "Vue.js Showcase Project",
   "author": "Dimitrios Lytras <dnlytras@gmail.com>",
   "private": true,
   "scripts": {

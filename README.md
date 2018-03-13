@@ -1,4 +1,9 @@
-# BriteCore Interview - Dimitrios Lytras
+# Vue.js Showcase
+
+Simple interface with:
+- Custom tag, input, modal, button components
+- Validations
+- Feedback
 
 [Production build on Netlify](https://nostalgic-goldberg-c2ac24.netlify.com/)
 
