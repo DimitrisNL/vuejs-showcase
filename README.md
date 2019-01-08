@@ -1,5 +1,7 @@
 # Vue.js Showcase
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/dimitrisnl/vuejs-showcase.svg)](https://greenkeeper.io/)
+
 Simple interface with:
 - Custom tag, input, modal, button components
 - Validations
